@@ -15,12 +15,8 @@ a {
 }
 
 :root {
-  --xl: "1449.99px";
-  --lg: "1199.99px";
-  --md: "991.99px";
-  --sm: "767.99px";
-  --xs: "479.99px";
-  --primaryColor: #5685f7;
+  --primaryColor: #3666d6;
+  --primaryColorHovered: #5685f7;
   --textColor: #394263;
   --whiteColor: #fff;
 }
@@ -34,6 +30,66 @@ a {
 
 p {
   color: var(--textColor);
+  line-height: 140%;
+}
+
+.section__title {
+  color: var(--textColor);
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 140%;
+}
+.section__title span {
+  display: block;
+  color: var(--primaryColor);
+}
+@media (width <= 1200px) {
+  .section__title {
+    font-size: 46px;
+    line-height: 1.3;
+  }
+}
+@media (width <= 768px) {
+  .section__title {
+    font-size: 34px;
+  }
+}
+
+.btn {
+  padding: 20px 32px;
+  background: var(--primaryColor);
+  color: var(--whiteColor);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-radius: 30px;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  transition: background 0.3s;
+  color: var(--whiteColor);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+@media (width <= 768px) {
+  .btn {
+    padding: 16px 24px;
+  }
+}
+.btn:hover {
+  background: var(--primaryColorHovered);
+}
+
+.hero__vector {
+  position: absolute;
+  right: 0;
+  top: 0;
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  z-index: -10;
 }
 
 .section__banner {
@@ -228,6 +284,71 @@ p {
     height: 2px;
     transform: scale(1);
     transition: cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.3s all;
+  }
+}
+
+.section__hero {
+  padding-top: 85px;
+  position: relative;
+}
+@media (width <= 1200px) {
+  .section__hero {
+    padding-top: 40px;
+  }
+}
+@media (width <= 768px) {
+  .section__hero {
+    padding-top: 20px;
+  }
+}
+.section__hero .hero__img {
+  position: absolute;
+  right: 200px;
+  top: -180px;
+  z-index: -10;
+}
+@media (width <= 1450px) {
+  .section__hero .hero__img {
+    max-width: 1000px;
+    right: 20px;
+  }
+}
+@media (width <= 992px) {
+  .section__hero .hero__img {
+    top: 100%;
+    max-width: 600px;
+    right: 0;
+  }
+}
+@media (width <= 768px) {
+  .section__hero .hero__img {
+    margin-top: -100px;
+  }
+}
+
+.hero__text {
+  display: grid;
+  gap: 20px;
+}
+.hero__item {
+  max-width: 700px;
+  width: 100%;
+  display: grid;
+  gap: 40px;
+}
+@media (width <= 1200px) {
+  .hero__item {
+    gap: 30px;
+  }
+}
+@media (width <= 992px) {
+  .hero__item {
+    max-width: 100%;
+  }
+}
+@media (width <= 768px) {
+  .hero__item {
+    gap: 20px;
   }
 }
 
