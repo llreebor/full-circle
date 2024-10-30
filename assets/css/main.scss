@@ -361,7 +361,6 @@ p {
 	&__about {
 	}
 }
-
 .about {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
@@ -388,6 +387,68 @@ p {
 	&__text {
 		display: grid;
 		gap: 20px;
+	}
+}
+
+// Services
+.swiper__services {
+	position: relative;
+	overflow: visible !important;
+	.swiper__btn {
+		width: 76px;
+		height: 76px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border-radius: 18px;
+		background: var(--primaryColor);
+		position: absolute;
+		top: 50%;
+		left: -100px;
+		transform: translateY(-50%);
+	}
+}
+.section {
+	// .section__services
+
+	&__services {
+		overflow: hidden;
+	}
+}
+.services {
+	// .services__container
+
+	&__container {
+		max-width: 1607px;
+		width: 100%;
+		margin: 0 auto;
+	}
+}
+
+.service {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 25px;
+	// .service__img
+
+	&__img {
+	}
+
+	// .service__title
+
+	&__title {
+		color: var(--textColor);
+		text-align: center;
+		font-size: 26px;
+		font-style: normal;
+		font-weight: 600;
+		line-height: 140%; /* 36.4px */
+	}
+
+	// .service__text
+	&__text {
+		text-align: center;
 	}
 }
 

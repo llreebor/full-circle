@@ -1,4 +1,5 @@
-function burgerMenu() {
+// Mobile menu burger
+function toggleMobileMenu() {
 	const burger = document.querySelector(".burger");
 	const menu = document.querySelector(".menu");
 	const body = document.querySelector("body");
@@ -24,4 +25,32 @@ function burgerMenu() {
 		}
 	});
 }
-burgerMenu();
+toggleMobileMenu();
+
+// Services slider
+const swiper = new Swiper(".swiper__services", {
+	// Optional parameters
+	loop: true,
+
+	// Navigation arrows
+	navigation: {
+		nextEl: ".swiper-button-next",
+		prevEl: ".swiper-button-prev",
+	},
+	spaceBetween: 22,
+	breakpoints: {
+		// when window width is >= 320px
+
+		320: {
+			slidesPerView: 1,
+		},
+		// when window width is >= 480px
+		480: {
+			slidesPerView: 3,
+		},
+		// when window width is >= 640px
+		640: {
+			slidesPerView: 3,
+		},
+	},
+});

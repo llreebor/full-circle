@@ -391,6 +391,52 @@ p {
   gap: 20px;
 }
 
+.swiper__services {
+  position: relative;
+  overflow: visible !important;
+}
+.swiper__services .swiper__btn {
+  width: 76px;
+  height: 76px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 18px;
+  background: var(--primaryColor);
+  position: absolute;
+  top: 50%;
+  left: -100px;
+  transform: translateY(-50%);
+}
+
+.section__services {
+  overflow: hidden;
+}
+
+.services__container {
+  max-width: 1607px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.service {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+}
+.service__title {
+  color: var(--textColor);
+  text-align: center;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 140%; /* 36.4px */
+}
+.service__text {
+  text-align: center;
+}
+
 @keyframes fade {
   0% {
     opacity: 0;
