@@ -1,0 +1,254 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Montserrat", sans-serif;
+}
+ul,
+ol {
+	list-style: none;
+}
+a {
+	text-decoration: none;
+}
+
+:root {
+	--xl: "1449.99px";
+	--lg: "1199.99px";
+	--md: "991.99px";
+	--sm: "767.99px";
+	--xs: "479.99px";
+	--primaryColor: #5685f7;
+	--textColor: #394263;
+	--whiteColor: #fff;
+}
+
+// Global Styles
+.container {
+	max-width: 1366px;
+	margin: 0 auto;
+	width: 100%;
+	padding: 0 16px;
+}
+p {
+	color: var(--textColor);
+}
+
+// Banner
+.section {
+	// .section__banner
+	&__banner {
+		background-color: var(--primaryColor);
+		padding: 4px 0;
+	}
+}
+.banner {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 20px;
+	// .banner__phone
+	&__phone {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		color: #fff;
+		font-size: 16px;
+		font-style: normal;
+		font-weight: 500;
+		line-height: 160%;
+	}
+
+	// .banner__list
+
+	&__list {
+		display: flex;
+		gap: 12px;
+		align-items: center;
+	}
+
+	// .banner__link
+
+	&__link {
+		display: flex;
+	}
+}
+
+// Header
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 20px 0;
+}
+.logo {
+	img {
+		@media (width <= 1199px) {
+			width: 120px;
+		}
+	}
+}
+.menu {
+	display: flex;
+	gap: 67px;
+	align-items: center;
+	&.active {
+		display: flex !important;
+		left: 0;
+		top: 0;
+		height: 100%;
+		width: 100%;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 40px;
+		animation: fade 0.1s linear;
+		background: var(--primaryColor);
+	}
+	@media (width <= 1199px) {
+		gap: 36px;
+	}
+	@media (width <= 992px) {
+		display: none;
+		position: fixed;
+		left: 0;
+		top: 0;
+		height: 100vh;
+		width: 100vw;
+	}
+	// .menu__link
+	&__link {
+		font-size: 18px;
+		font-style: normal;
+		font-weight: 500;
+		line-height: normal;
+		color: var(--textColor);
+		transition: color 0.3s;
+		position: relative;
+		&::after {
+			position: absolute;
+			bottom: -4px;
+			left: 0;
+			height: 1px;
+			content: "";
+			width: 100%;
+			background: var(--primaryColor);
+			scale: 0;
+			transition: scale 0.3s;
+		}
+		&:hover {
+			color: var(--primaryColor);
+			&::after {
+				scale: 1;
+			}
+		}
+		@media (width <= 992px) {
+			font-size: 24px;
+			font-weight: 600;
+			color: var(--whiteColor);
+			path {
+				stroke: var(--whiteColor);
+			}
+		}
+	}
+
+	// .menu__link-phone
+	&__link-phone {
+		display: flex;
+		align-items: center;
+		gap: 14px;
+		padding: 14px 24px;
+		border: 1px solid var(--primaryColor);
+		border-radius: 100px;
+		display: inline-flex;
+		transition: all 0.3s;
+		@media (width <= 992px) {
+			border-color: var(--whiteColor);
+		}
+		path {
+			transition: all 0.3s;
+		}
+		&:hover {
+			background: var(--primaryColor);
+			color: var(--whiteColor);
+			&::after {
+				display: none;
+			}
+			path {
+				stroke: var(--whiteColor);
+			}
+		}
+	}
+}
+.burger {
+	display: none;
+	background: transparent;
+	z-index: 3;
+	border: none;
+	@media (width <= 992px) {
+		display: flex;
+		position: relative;
+		height: 20px;
+		width: 30px;
+
+		&.active {
+			&:before {
+				background: var(--whiteColor);
+				transform: rotate(45deg);
+				transition: cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.3s all;
+				top: 8px;
+			}
+
+			&:after {
+				background: var(--whiteColor);
+				transform: rotate(-45deg);
+				bottom: 10px;
+				transition: cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.3s all;
+			}
+
+			& span {
+				transform: scale(0);
+			}
+		}
+
+		&:before,
+		&:after {
+			content: "";
+			position: absolute;
+			height: 2px;
+			width: 100%;
+			background: var(--primaryColor);
+			transition: cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.3s all;
+		}
+
+		&:before {
+			top: 0;
+		}
+
+		&::after {
+			bottom: 0;
+		}
+
+		span {
+			position: absolute;
+			top: 9px;
+			right: 0;
+			width: 100%;
+			background: var(--primaryColor);
+			height: 2px;
+			transform: scale(1);
+			transition: cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.3s all;
+		}
+	}
+}
+
+// Animation
+@keyframes fade {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}

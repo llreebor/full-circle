@@ -1,0 +1,241 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+:root {
+  --xl: "1449.99px";
+  --lg: "1199.99px";
+  --md: "991.99px";
+  --sm: "767.99px";
+  --xs: "479.99px";
+  --primaryColor: #5685f7;
+  --textColor: #394263;
+  --whiteColor: #fff;
+}
+
+.container {
+  max-width: 1366px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 16px;
+}
+
+p {
+  color: var(--textColor);
+}
+
+.section__banner {
+  background-color: var(--primaryColor);
+  padding: 4px 0;
+}
+
+.banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+.banner__phone {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 160%;
+}
+.banner__list {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.banner__link {
+  display: flex;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+}
+
+@media (width <= 1199px) {
+  .logo img {
+    width: 120px;
+  }
+}
+
+.menu {
+  display: flex;
+  gap: 67px;
+  align-items: center;
+}
+.menu.active {
+  display: flex !important;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  animation: fade 0.1s linear;
+  background: var(--primaryColor);
+}
+@media (width <= 1199px) {
+  .menu {
+    gap: 36px;
+  }
+}
+@media (width <= 992px) {
+  .menu {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+  }
+}
+.menu__link {
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  color: var(--textColor);
+  transition: color 0.3s;
+  position: relative;
+}
+.menu__link::after {
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  height: 1px;
+  content: "";
+  width: 100%;
+  background: var(--primaryColor);
+  scale: 0;
+  transition: scale 0.3s;
+}
+.menu__link:hover {
+  color: var(--primaryColor);
+}
+.menu__link:hover::after {
+  scale: 1;
+}
+@media (width <= 992px) {
+  .menu__link {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--whiteColor);
+  }
+  .menu__link path {
+    stroke: var(--whiteColor);
+  }
+}
+.menu__link-phone {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 24px;
+  border: 1px solid var(--primaryColor);
+  border-radius: 100px;
+  display: inline-flex;
+  transition: all 0.3s;
+}
+@media (width <= 992px) {
+  .menu__link-phone {
+    border-color: var(--whiteColor);
+  }
+}
+.menu__link-phone path {
+  transition: all 0.3s;
+}
+.menu__link-phone:hover {
+  background: var(--primaryColor);
+  color: var(--whiteColor);
+}
+.menu__link-phone:hover::after {
+  display: none;
+}
+.menu__link-phone:hover path {
+  stroke: var(--whiteColor);
+}
+
+.burger {
+  display: none;
+  background: transparent;
+  z-index: 3;
+  border: none;
+}
+@media (width <= 992px) {
+  .burger {
+    display: flex;
+    position: relative;
+    height: 20px;
+    width: 30px;
+  }
+  .burger.active:before {
+    background: var(--whiteColor);
+    transform: rotate(45deg);
+    transition: cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.3s all;
+    top: 8px;
+  }
+  .burger.active:after {
+    background: var(--whiteColor);
+    transform: rotate(-45deg);
+    bottom: 10px;
+    transition: cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.3s all;
+  }
+  .burger.active span {
+    transform: scale(0);
+  }
+  .burger:before, .burger:after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background: var(--primaryColor);
+    transition: cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.3s all;
+  }
+  .burger:before {
+    top: 0;
+  }
+  .burger::after {
+    bottom: 0;
+  }
+  .burger span {
+    position: absolute;
+    top: 9px;
+    right: 0;
+    width: 100%;
+    background: var(--primaryColor);
+    height: 2px;
+    transform: scale(1);
+    transition: cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.3s all;
+  }
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}/*# sourceMappingURL=main.css.map */
