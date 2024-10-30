@@ -21,6 +21,10 @@ a {
   --whiteColor: #fff;
 }
 
+section {
+  padding: 70px 0;
+}
+
 .container {
   max-width: 1366px;
   margin: 0 auto;
@@ -31,6 +35,11 @@ a {
 p {
   color: var(--textColor);
   line-height: 140%;
+}
+@media (width <= 768px) {
+  p {
+    font-size: 14px;
+  }
 }
 
 .section__title {
@@ -139,6 +148,7 @@ p {
   display: flex;
   gap: 67px;
   align-items: center;
+  z-index: 20;
 }
 .menu.active {
   display: flex !important;
@@ -236,7 +246,7 @@ p {
 .burger {
   display: none;
   background: transparent;
-  z-index: 3;
+  z-index: 20;
   border: none;
 }
 @media (width <= 992px) {
@@ -315,14 +325,16 @@ p {
 }
 @media (width <= 992px) {
   .section__hero .hero__img {
-    top: 100%;
-    max-width: 600px;
+    max-width: 800px;
     right: 0;
+    bottom: -100px;
+    top: unset;
+    opacity: 0.5;
   }
 }
 @media (width <= 768px) {
   .section__hero .hero__img {
-    margin-top: -100px;
+    max-width: 400px;
   }
 }
 
@@ -350,6 +362,33 @@ p {
   .hero__item {
     gap: 20px;
   }
+}
+
+.about {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 50px;
+}
+@media (width <= 992px) {
+  .about {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}
+.about__item {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  align-items: start;
+}
+.about__item img {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+}
+.about__text {
+  display: grid;
+  gap: 20px;
 }
 
 @keyframes fade {
