@@ -34,8 +34,8 @@ const swiper = new Swiper(".swiper__services", {
 
 	// Navigation arrows
 	navigation: {
-		nextEl: ".swiper-button-next",
-		prevEl: ".swiper-button-prev",
+		nextEl: ".swiper-next",
+		prevEl: ".swiper-prev",
 	},
 	spaceBetween: 22,
 	breakpoints: {
@@ -45,11 +45,11 @@ const swiper = new Swiper(".swiper__services", {
 			slidesPerView: 1,
 		},
 		// when window width is >= 480px
-		480: {
-			slidesPerView: 3,
+		640: {
+			slidesPerView: 2,
 		},
 		// when window width is >= 640px
-		640: {
+		992: {
 			slidesPerView: 3,
 		},
 	},

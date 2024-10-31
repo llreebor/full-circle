@@ -24,6 +24,11 @@ a {
 section {
   padding: 70px 0;
 }
+@media (width <= 992px) {
+  section {
+    padding: 40px 0;
+  }
+}
 
 .container {
   max-width: 1366px;
@@ -85,6 +90,7 @@ p {
 @media (width <= 768px) {
   .btn {
     padding: 16px 24px;
+    font-size: 16px;
   }
 }
 .btn:hover {
@@ -392,31 +398,72 @@ p {
 }
 
 .swiper__services {
-  position: relative;
-  overflow: visible !important;
+  overflow: visible;
 }
-.swiper__services .swiper__btn {
-  width: 76px;
-  height: 76px;
+.swiper__services .swiper-slide {
+  height: auto;
+}
+
+.swiper__btns {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  gap: 20px;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+}
+.swiper__btns .swiper__btn {
+  background: var(--primaryColor);
+  width: 36px;
+  height: 36px;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 18px;
-  background: var(--primaryColor);
-  position: absolute;
-  top: 50%;
-  left: -100px;
-  transform: translateY(-50%);
+  border-radius: 8px;
+  z-index: 10;
+  cursor: pointer;
 }
-
-.section__services {
-  overflow: hidden;
+.swiper__btns .swiper__btn svg {
+  width: 20px;
+}
+@media (width >= 768px) {
+  .swiper__btns .swiper__btn {
+    width: 50px;
+    height: 50px;
+  }
+}
+@media (width >= 1713px) {
+  .swiper__btns .swiper__btn {
+    width: 76px;
+    height: 76px;
+    top: 50%;
+    transform: translateY(-50%);
+    position: absolute;
+    border-radius: 18px;
+  }
+  .swiper__btns .swiper__btn:hover {
+    background: var(--primaryColorHovered);
+  }
+  .swiper__btns .swiper__btn.swiper-prev {
+    left: -50px;
+  }
+  .swiper__btns .swiper__btn.swiper-prev svg {
+    width: 100%;
+  }
+  .swiper__btns .swiper__btn.swiper-next {
+    right: -50px;
+  }
+  .swiper__btns .swiper__btn.swiper-next svg {
+    width: 100%;
+  }
 }
 
 .services__container {
   max-width: 1607px;
   width: 100%;
   margin: 0 auto;
+  padding: 0 16px;
+  position: relative;
 }
 
 .service {
@@ -424,6 +471,12 @@ p {
   flex-direction: column;
   align-items: center;
   gap: 25px;
+  height: 100%;
+}
+.service__img img {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
 }
 .service__title {
   color: var(--textColor);
@@ -435,6 +488,9 @@ p {
 }
 .service__text {
   text-align: center;
+}
+.service__btn {
+  margin-top: auto;
 }
 
 @keyframes fade {
