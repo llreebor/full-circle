@@ -5,6 +5,10 @@
 	box-sizing: border-box;
 	font-family: "Montserrat", sans-serif;
 }
+html {
+	scroll-behavior: smooth;
+	scroll-padding-top: var(--scrollPadding);
+}
 ul,
 ol {
 	list-style: none;
@@ -19,6 +23,7 @@ a {
 	--textColor: #394263;
 	--whiteColor: #fff;
 	--whiteColorHovered: #eeeded;
+	--scrollPadding: 140px;
 }
 
 // Global Styles
@@ -145,6 +150,26 @@ p {
 }
 
 // Header
+header {
+	position: sticky;
+	left: 0;
+	top: 0;
+	z-index: 10;
+	transition: 0.3s all;
+
+	&.sticky {
+		background: var(--whiteColor);
+		.logo {
+			img {
+				max-width: 100px;
+				height: auto;
+			}
+		}
+		.header {
+			padding: 10px 0;
+		}
+	}
+}
 .header {
 	display: flex;
 	justify-content: space-between;
@@ -152,7 +177,10 @@ p {
 	padding: 20px 0;
 }
 .logo {
+	transition: 0.3s all;
+
 	img {
+		transition: 0.3s all;
 		@media (width <= 1199px) {
 			width: 120px;
 		}
@@ -424,7 +452,7 @@ p {
 		justify-content: center;
 		align-items: center;
 		border-radius: 8px;
-		z-index: 10;
+		z-index: 5;
 		cursor: pointer;
 		svg {
 			width: 20px;

@@ -15,8 +15,6 @@ function toggleMobileMenu() {
 		}
 	});
 
-	console.log(22);
-	// Вот тут мы ставим брейкпоинт навбара
 	window.addEventListener("resize", () => {
 		if (window.innerWidth > 991.98) {
 			menu.classList.remove("active");
@@ -26,6 +24,23 @@ function toggleMobileMenu() {
 	});
 }
 toggleMobileMenu();
+// Sticke Header
+function stickyHeader() {
+	const root = document.querySelector(":root");
+	const nav = document.querySelector("header");
+	const breakpoint = 33;
+	const isScrollingPadding = "80px";
+	const isNotScrollingPadding = "140px";
+	var rs = getComputedStyle(root);
+	if (window.scrollY >= breakpoint) {
+		nav.classList.add("sticky");
+		root.style.setProperty("--scrollPadding", isScrollingPadding);
+	} else {
+		nav.classList.remove("sticky");
+		root.style.setProperty("--scrollPadding", isNotScrollingPadding);
+	}
+}
+window.addEventListener("scroll", stickyHeader);
 
 // Services slider
 const swiper = new Swiper(".swiper__services", {
@@ -39,16 +54,12 @@ const swiper = new Swiper(".swiper__services", {
 	},
 	spaceBetween: 22,
 	breakpoints: {
-		// when window width is >= 320px
-
 		320: {
 			slidesPerView: 1,
 		},
-		// when window width is >= 480px
 		640: {
 			slidesPerView: 2,
 		},
-		// when window width is >= 640px
 		992: {
 			slidesPerView: 3,
 		},
