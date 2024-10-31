@@ -113,6 +113,7 @@ p {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	height: 34px;
 	gap: 20px;
 	// .banner__phone
 	&__phone {
@@ -224,6 +225,7 @@ header {
 		color: var(--textColor);
 		transition: color 0.3s;
 		position: relative;
+
 		&::after {
 			position: absolute;
 			bottom: -4px;
@@ -235,12 +237,15 @@ header {
 			scale: 0;
 			transition: scale 0.3s;
 		}
-		&:hover {
-			color: var(--primaryColor);
-			&::after {
-				scale: 1;
+		@media (width >= 992px) {
+			&:hover {
+				color: var(--primaryColor);
+				&::after {
+					scale: 1;
+				}
 			}
 		}
+
 		@media (width <= 992px) {
 			font-size: 24px;
 			font-weight: 600;

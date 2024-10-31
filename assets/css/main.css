@@ -129,6 +129,7 @@ p {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 34px;
   gap: 20px;
 }
 .banner__phone {
@@ -249,11 +250,13 @@ header.sticky .header {
   scale: 0;
   transition: scale 0.3s;
 }
-.menu__link:hover {
-  color: var(--primaryColor);
-}
-.menu__link:hover::after {
-  scale: 1;
+@media (width >= 992px) {
+  .menu__link:hover {
+    color: var(--primaryColor);
+  }
+  .menu__link:hover::after {
+    scale: 1;
+  }
 }
 @media (width <= 992px) {
   .menu__link {
