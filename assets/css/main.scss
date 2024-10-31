@@ -488,6 +488,73 @@ p {
 	}
 }
 
+// Locations
+.section {
+	// .section__locations
+	&__locations {
+		position: relative;
+		.locations__vector {
+			position: absolute;
+			top: -60px;
+			right: 0;
+			z-index: -10;
+			@media (width <= 1200px) {
+				max-height: 700px;
+			}
+			@media (width <= 992px) {
+				max-height: 500px;
+				top: 20px;
+			}
+			@media (width <= 768px) {
+				max-height: 600px;
+				top: -50px;
+			}
+			@media (width <= 480px) {
+				max-height: 500px;
+				top: -30px;
+			}
+			@media (width <= 374px) {
+				max-height: 400px;
+				top: 0px;
+			}
+		}
+	}
+}
+
+.locations {
+	// .locations__info
+	display: flex;
+	align-items: center;
+	gap: 86px;
+	padding-top: 110px;
+	@media (width <= 768px) {
+		flex-direction: column;
+		gap: 40px;
+		padding-top: 0;
+	}
+	&__info {
+		display: flex;
+		flex-direction: column;
+		max-width: 311px;
+		width: 100%;
+		gap: 40px;
+		@media (width <= 768px) {
+			max-width: 100%;
+			gap: 20px;
+		}
+	}
+
+	// .locations__image
+
+	&__image {
+		img {
+			max-width: 100%;
+			width: 100%;
+			height: auto;
+		}
+	}
+}
+
 // Animation
 @keyframes fade {
 	0% {

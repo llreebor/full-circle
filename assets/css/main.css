@@ -493,6 +493,77 @@ p {
   margin-top: auto;
 }
 
+.section__locations {
+  position: relative;
+}
+.section__locations .locations__vector {
+  position: absolute;
+  top: -60px;
+  right: 0;
+  z-index: -10;
+}
+@media (width <= 1200px) {
+  .section__locations .locations__vector {
+    max-height: 700px;
+  }
+}
+@media (width <= 992px) {
+  .section__locations .locations__vector {
+    max-height: 500px;
+    top: 20px;
+  }
+}
+@media (width <= 768px) {
+  .section__locations .locations__vector {
+    max-height: 600px;
+    top: -50px;
+  }
+}
+@media (width <= 480px) {
+  .section__locations .locations__vector {
+    max-height: 500px;
+    top: -30px;
+  }
+}
+@media (width <= 374px) {
+  .section__locations .locations__vector {
+    max-height: 400px;
+    top: 0px;
+  }
+}
+
+.locations {
+  display: flex;
+  align-items: center;
+  gap: 86px;
+  padding-top: 110px;
+}
+@media (width <= 768px) {
+  .locations {
+    flex-direction: column;
+    gap: 40px;
+    padding-top: 0;
+  }
+}
+.locations__info {
+  display: flex;
+  flex-direction: column;
+  max-width: 311px;
+  width: 100%;
+  gap: 40px;
+}
+@media (width <= 768px) {
+  .locations__info {
+    max-width: 100%;
+    gap: 20px;
+  }
+}
+.locations__image img {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+}
+
 @keyframes fade {
   0% {
     opacity: 0;
