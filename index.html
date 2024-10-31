@@ -193,6 +193,8 @@
 
 			<!-- Services -->
 			<section class="section__services">
+				<h2 class="section__title text-center">Services</h2>
+
 				<div class="services__container">
 					<div class="swiper__btns">
 						<div class="swiper-prev swiper__btn">
@@ -593,7 +595,160 @@
 					</div>
 				</div>
 			</section>
+
+			<!-- Contacts -->
+			<section class="section__contacts">
+				<div class="container">
+					<h2 class="section__title text-center">Contact Us</h2>
+					<div class="contacts">
+						<div class="contacts__info">
+							<a class="contacts__link" href="tel:+6464319999">
+								<svg
+									width="17"
+									height="17"
+									viewBox="0 0 17 17"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg"
+								>
+									<path
+										d="M5.71922 1.5H3.5C2.39543 1.5 1.5 2.39543 1.5 3.5V5.5C1.5 11.0228 5.97715 15.5 11.5 15.5H13.5C14.6046 15.5 15.5 14.6046 15.5 13.5V12.118C15.5 11.7393 15.286 11.393 14.9472 11.2236L12.5313 10.0156C11.987 9.74349 11.3278 10.0165 11.1354 10.5938L10.8376 11.4871C10.6447 12.0658 10.0512 12.4102 9.45309 12.2906C7.05929 11.8119 5.18814 9.94071 4.70938 7.54691C4.58976 6.94882 4.93422 6.35526 5.51286 6.16238L6.62149 5.79284C7.11721 5.6276 7.40214 5.10855 7.2754 4.60162L6.68937 2.25746C6.57807 1.8123 6.17809 1.5 5.71922 1.5Z"
+										stroke="#5685F7"
+										stroke-width="1.5"
+									/>
+								</svg>
+
+								(646) 431 - 99 - 99
+							</a>
+							<a class="contacts__link" href="mailto:info@fullcircle.com">
+								<svg
+									width="21"
+									height="21"
+									viewBox="0 0 21 21"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg"
+								>
+									<path
+										d="M2.56665 7.09995L10.5 11.6333L18.4333 7.09995M3.69998 3.69995H17.3C17.9259 3.69995 18.4333 4.20736 18.4333 4.83328V16.1666C18.4333 16.7925 17.9259 17.3 17.3 17.3H3.69998C3.07406 17.3 2.56665 16.7925 2.56665 16.1666V4.83328C2.56665 4.20736 3.07406 3.69995 3.69998 3.69995Z"
+										stroke="#5685F7"
+										stroke-width="1.5"
+									/>
+									<line
+										x1="8.6103"
+										y1="10.4359"
+										x2="3.6103"
+										y2="17.4359"
+										stroke="#5685F7"
+										stroke-width="1.5"
+									/>
+									<line
+										y1="-0.75"
+										x2="8.60233"
+										y2="-0.75"
+										transform="matrix(0.581238 0.813733 0.813733 -0.581238 13 10)"
+										stroke="#5685F7"
+										stroke-width="1.5"
+									/>
+								</svg>
+
+								info@fullcircle.com
+							</a>
+						</div>
+					</div>
+
+					<form class="form">
+						<!-- Background -->
+						<img
+							class="form__bg"
+							src="./assets/images/form-vector.svg"
+							alt="form background"
+						/>
+						<div class="form__rows">
+							<div class="form__row">
+								<div class="input-container">
+									<input
+										class="input"
+										type="text"
+										id="first_name"
+										name="first_name"
+										placeholder=""
+									/>
+									<label for="floating_standard">FIrst Name *</label>
+								</div>
+								<div class="input-container">
+									<input
+										class="input"
+										type="text"
+										id="last_name"
+										name="last_name"
+										placeholder=""
+									/>
+									<label for="floating_standard">Last Name *</label>
+								</div>
+							</div>
+							<div class="form__row">
+								<div class="input-container">
+									<input
+										class="input"
+										type="email"
+										id="email"
+										name="email"
+										placeholder=""
+									/>
+									<label for="floating_standard">Email *</label>
+								</div>
+								<div class="input-container">
+									<input
+										class="input"
+										type="text"
+										id="phone"
+										name="phone"
+										placeholder=""
+									/>
+									<label for="floating_standard">Phone Number</label>
+								</div>
+							</div>
+						</div>
+
+						<div class="input-container">
+							<textarea
+								class="input"
+								id="message"
+								name="message"
+								placeholder=""
+							></textarea>
+							<label for="message">Message *</label>
+						</div>
+
+						<div class="form__recaptcha">
+							<p class="form__text">Please verify that you are human</p>
+							<img src="./assets/images/recaptcha.png" alt="image" />
+						</div>
+
+						<label class="form__checkbox">
+							<input
+								type="checkbox"
+								name="checkbox"
+								value="checkbox__value"
+								class="checkbox__input"
+							/>
+							<span class="fake"></span>
+							<div>
+								By submitting this form, you hereby agree to the terms outlined
+								in our privacy policy, and that we may use your information to
+								contact in regards to your inquiry. 
+								<a href="#">Privacy Policy * </a>
+							</div>
+						</label>
+
+						<button class="btn form__btn">Submit</button>
+					</form>
+				</div>
+			</section>
 		</main>
+
+		<footer>
+			<div class="container"></div>
+		</footer>
 
 		<!-- Libs -->
 		<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
