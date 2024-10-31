@@ -660,6 +660,7 @@ header.sticky .header {
   flex-direction: column;
   margin-top: 36px;
   position: relative;
+  z-index: 6;
 }
 @media (width <= 1200px) {
   .form {
@@ -682,7 +683,7 @@ header.sticky .header {
   position: absolute;
   right: 0;
   top: 0;
-  z-index: -10;
+  z-index: -5;
   max-width: 100%;
   width: 100%;
   height: auto;
@@ -863,6 +864,100 @@ header.sticky .header {
   pointer-events: none;
   transition: all 0.3s ease;
   font-weight: 500;
+}
+
+footer {
+  background: var(--textColor);
+  padding-top: 153px;
+  padding-bottom: 70px;
+  margin-top: -150px;
+  z-index: -10;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+@media (width <= 800px) {
+  .footer {
+    flex-direction: column;
+  }
+}
+@media (width <= 992px) {
+  .footer__logo img {
+    width: 160px;
+  }
+}
+.footer__item {
+  display: flex;
+  flex-direction: column;
+  gap: 47px;
+  align-items: flex-end;
+}
+@media (width <= 992px) {
+  .footer__item {
+    gap: 32px;
+  }
+}
+@media (width <= 800px) {
+  .footer__item {
+    align-items: center;
+  }
+}
+.footer__menu {
+  display: flex;
+  gap: 47px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+@media (width <= 992px) {
+  .footer__menu {
+    gap: 20px;
+  }
+}
+.footer__link {
+  color: var(--whiteColor);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  position: relative;
+}
+.footer__link::after {
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  height: 1px;
+  content: "";
+  width: 100%;
+  background: var(--whiteColor);
+  scale: 0;
+  transition: scale 0.3s;
+}
+.footer__link:hover::after {
+  scale: 1;
+}
+.footer__link.privacy__link {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  color: var(--whiteColorHovered);
+}
+.footer__link.privacy__link:after {
+  display: none;
+}
+.footer__text {
+  color: var(--whiteColor);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+@media (width <= 800px) {
+  .footer__text {
+    text-align: center;
+  }
 }
 
 @keyframes fade {
